@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "check:contrast": "node scripts/contrast.mjs",
-    "preview": "node scripts/start.mjs"
+    "preview": "node scripts/start.mjs",
+    "export": "bash scripts/export-static.sh"
   },
   "dependencies": {
     "@react-three/drei": "^10.7.6",

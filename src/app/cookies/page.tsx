@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink } from "@/components/SiteLink";
 import type { Metadata } from "next";
 import { LegalPage } from "@/components/LegalPage";
 import { site } from "@/content/sv";
@@ -30,9 +30,13 @@ export default function Page() {
       <h2>Frågor</h2>
       <p>
         Hör av dig till {site.company.email}. Mer om hur vi hanterar personuppgifter finns i{" "}
-        <Link href="/integritetspolicy" className="text-copper underline underline-offset-4">
+        <SiteLink
+          base="../"
+          href="/integritetspolicy"
+          className="text-copper underline underline-offset-4"
+        >
           integritetspolicyn
-        </Link>
+        </SiteLink>
         .
       </p>
     </LegalPage>

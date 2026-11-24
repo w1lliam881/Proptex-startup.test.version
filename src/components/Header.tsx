@@ -1,11 +1,11 @@
 "use client";
 
-import Link from "next/link";
+import { SiteLink } from "@/components/SiteLink";
 import { useState } from "react";
 import { nav } from "@/content/sv";
 import { Wordmark } from "./Wordmark";
 
-export function Header() {
+export function Header({ base = "./" }: { base?: string }) {
   const [open, setOpen] = useState(false);
   return (
     <header className="on-marin bg-marin text-paper relative z-20">
@@ -16,28 +16,30 @@ export function Header() {
         {nav.skipLink}
       </a>
       <div className="wrap flex items-center justify-between py-5">
-        <Link href="/" className="text-paper" aria-label="Proptex, till startsidan">
+        <SiteLink base={base} href="/" className="text-paper" aria-label="Proptex, till startsidan">
           <Wordmark className="h-7 w-auto" title="Proptex" />
-        </Link>
+        </SiteLink>
         <nav aria-label="Huvudmeny" className="hidden md:block">
           <ul className="flex items-center gap-8 text-[0.95rem]">
             {nav.items.map((i) => (
               <li key={i.href}>
-                <Link
+                <SiteLink
+                  base={base}
                   href={i.href}
                   className="text-paper-muted hover:text-paper transition-colors duration-200"
                 >
                   {i.label}
-                </Link>
+                </SiteLink>
               </li>
             ))}
             <li>
-              <Link
+              <SiteLink
+                base={base}
                 href="/#kontakt"
                 className="border-copper-light/70 text-paper hover:bg-copper-light hover:text-marin rounded-[3px] border px-4 py-2 font-semibold transition-colors duration-200"
               >
                 {nav.cta}
-              </Link>
+              </SiteLink>
             </li>
           </ul>
         </nav>
@@ -77,19 +79,25 @@ export function Header() {
           <ul className="flex flex-col pt-2 text-lg">
             {nav.items.map((i) => (
               <li key={i.href} className="border-line-dark border-b">
-                <Link href={i.href} className="block py-3" onClick={() => setOpen(false)}>
+                <SiteLink
+                  base={base}
+                  href={i.href}
+                  className="block py-3"
+                  onClick={() => setOpen(false)}
+                >
                   {i.label}
-                </Link>
+                </SiteLink>
               </li>
             ))}
             <li className="pt-5">
-              <Link
+              <SiteLink
+                base={base}
                 href="/#kontakt"
                 onClick={() => setOpen(false)}
                 className="bg-copper-light text-marin inline-block rounded-[3px] px-5 py-3 font-semibold"
               >
                 {nav.cta}
-              </Link>
+              </SiteLink>
             </li>
           </ul>
         </nav>

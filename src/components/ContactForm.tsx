@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { SiteLink } from "@/components/SiteLink";
 import { useState, type FormEvent } from "react";
 import { contact } from "@/content/sv";
 import { contactSchema } from "@/lib/contact-schema";
@@ -40,6 +40,11 @@ export function ContactForm() {
       return;
     }
     setErrors({});
+    if (process.env.NEXT_PUBLIC_STATIC_EXPORT === "1") {
+      setState("done");
+      form.reset();
+      return;
+    }
     setState("sending");
     try {
       const res = await fetch("/api/contact", {
@@ -66,6 +71,9 @@ export function ContactForm() {
       <div role="status" className="border-copper-light border-l-2 py-2 pl-6">
         <p className="display h-md">{f.thanksTitle}</p>
         <p className="measure text-paper-muted mt-3">{f.thanksText}</p>
+        {process.env.NEXT_PUBLIC_STATIC_EXPORT === "1" && (
+          <p className="measure text-copper-light mt-3 text-sm">{f.previewNote}</p>
+        )}
         <button
           type="button"
           onClick={() => setState("idle")}
@@ -164,12 +172,12 @@ export function ContactForm() {
           />
           <span>
             {f.consentBefore}{" "}
-            <Link
+            <SiteLink
               href="/integritetspolicy"
               className="text-paper hover:text-copper-light underline underline-offset-4"
             >
               {f.consentLink}
-            </Link>{" "}
+            </SiteLink>{" "}
             {f.consentAfter}
           </span>
         </label>

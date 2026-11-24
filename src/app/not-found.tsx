@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SiteLink } from "@/components/SiteLink";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { notFound } from "@/content/sv";
@@ -13,12 +13,12 @@ export default function NotFound() {
             <p className="eyebrow num text-copper">404</p>
             <h1 className="display h-lg mt-3">{notFound.title}</h1>
             <p className="measure text-ink-2 mt-6">{notFound.text}</p>
-            <Link
+            <SiteLink
               href="/"
               className="bg-copper text-paper hover:bg-ink mt-8 inline-block rounded-[3px] px-5 py-3 font-semibold"
             >
               {notFound.back}
-            </Link>
+            </SiteLink>
           </div>
           <svg
             viewBox="0 0 240 200"

@@ -13,7 +13,7 @@ export function LegalPage({
 }) {
   return (
     <>
-      <Header />
+      <Header base="../" />
       <main id="innehall" className="wrap py-20 md:py-28">
         <div className="grid-12">
           <article className="[&_p]:text-ink-2 [&_ul]:text-ink-2 col-span-12 md:col-span-8 md:col-start-3 [&_h2]:mt-10 [&_h2]:font-serif [&_h2]:text-2xl [&_li]:mt-1 [&_p]:mt-3 [&_ul]:mt-3 [&_ul]:list-disc [&_ul]:pl-5">
@@ -23,7 +23,7 @@ export function LegalPage({
           </article>
         </div>
       </main>
-      <Footer />
+      <Footer base="../" />
     </>
   );
 }

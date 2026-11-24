@@ -326,6 +326,8 @@ export const contact = {
     honeypot: "Lämna det här fältet tomt",
     submit: "Skicka",
     sending: "Skickar…",
+    previewNote:
+      "Det här är en förhandsversion av sidan. Formuläret går att prova, men meddelandet skickas inte vidare.",
     thanksTitle: "Tack, nu har vi fått det.",
     thanksText:
       "Vi läser allt själva och hör av oss så snart vi kan. Under tiden får du gärna klicka runt i demon igen.",

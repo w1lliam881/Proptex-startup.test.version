@@ -1,8 +1,8 @@
-import Link from "next/link";
+import { SiteLink } from "@/components/SiteLink";
 import { footer, site } from "@/content/sv";
 import { Wordmark } from "./Wordmark";
 
-export function Footer() {
+export function Footer({ base = "./" }: { base?: string }) {
   return (
     <footer className="border-line bg-paper border-t py-14">
       <div className="wrap grid-12 gap-y-8 text-sm">
@@ -26,17 +26,22 @@ export function Footer() {
         <nav aria-label="Juridiskt" className="col-span-12 md:col-span-4">
           <ul className="space-y-1">
             <li>
-              <Link
+              <SiteLink
+                base={base}
                 href="/integritetspolicy"
                 className="hover:text-copper underline underline-offset-4"
               >
                 {footer.privacy}
-              </Link>
+              </SiteLink>
             </li>
             <li>
-              <Link href="/cookies" className="hover:text-copper underline underline-offset-4">
+              <SiteLink
+                base={base}
+                href="/cookies"
+                className="hover:text-copper underline underline-offset-4"
+              >
                 {footer.cookies}
-              </Link>
+              </SiteLink>
             </li>
           </ul>
           <p className="text-ink-2 mt-4">{footer.demoNote}</p>
