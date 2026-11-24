@@ -2,11 +2,23 @@
 
 Next.js (App Router) + TypeScript + Tailwind CSS 4. 3D med three.js via `@react-three/fiber` och `@react-three/drei`. Allt i demon är simulerad data.
 
-## Kom igång
+## Öppna sidan (enklast)
+
+1. Installera [Node.js](https://nodejs.org) (välj LTS) om du inte redan har det. Görs en gång.
+2. Dubbelklicka på **`Starta Proptex.command`** (Mac) eller **`Starta Proptex.bat`** (Windows).
+3. Webbläsaren öppnas av sig själv. Låt fönstret som dök upp vara öppet, stäng det för att stänga av sidan.
+
+Första gången tar det ett par minuter (installation och bygge). Sedan går det på några sekunder. Ändrar du texter eller data byggs sidan om automatiskt nästa gång du startar.
+
+På Mac kan det första gången stå att filen är från en "oidentifierad utvecklare": högerklicka, välj **Öppna** och bekräfta. Har du laddat ner projektet som zip och filen inte går att köra, öppna Terminal i mappen och skriv `npm run preview`.
+
+Samma sak från terminalen: `npm run preview`.
+
+## För utvecklare
 
 ```bash
 npm install
-npm run dev          # http://localhost:3000
+npm run dev          # http://localhost:3000, uppdateras direkt när du sparar
 npm run build        # produktionsbygge
 npm start            # kör bygget
 npm run lint         # ESLint
